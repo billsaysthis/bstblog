@@ -1,0 +1,38 @@
+---
+layout: post
+title: Publishing Tweets to a WordPress blog
+date: 2012-09-28 22:36:31.000000000 -07:00
+type: post
+published: true
+status: publish
+categories:
+- Software Development
+- Technology
+tags: []
+meta:
+  _wpas_done_1498879: '1'
+  _edit_last: '854'
+  _wpas_done_1498881: '1'
+author:
+  login: blazar
+  email: blazar@gmail.com
+  display_name: BillSaysThis
+  first_name: ''
+  last_name: ''
+---
+<p>With <a href="http://ifttt.com">IFTTT</a> losing Twitter triggers I figured I better do something if I want to keep reposting my tweets to this blog. So with the help of the inestimable Steve Morris I <a href="https://gist.github.com/3802239">whipped up a little Ruby script</a> that is meant to be run as a cron job; the results are visible as the previous seven posts here.</p>
+<p>Requirements for using this script:</p>
+<ul>
+<li>A Gmail account from which to send emails.</li>
+<li>A Twitter developer account with an application set up so you have the necessary keys and tokens to use in the script.</li>
+<li>OSX and will probably work on Linux as well, but as for Windows I have no idea nor do I have an interest in finding out (if you port it, feel free to tweet it to me and if it seems reasonable I'll post it here). Note that OSX and Linux come with a sufficient Ruby to run this, though you may need to tailor the first line shebang to your installation.</li>
+</ul>
+<p>I used two gems to power the script: Chris Kowalik's <a href="https://github.com/nu7hatch/gmail">gmail</a> and Erik Michaels-Ober's <a href="https://github.com/sferik/twitter">twitter</a>. It's possible I could've used <a href="https://github.com/sferik/t">Erik's t</a> Twitter command line gem and had an even simpler script but this seems fine for now.</p>
+<p>The script has three main parts:</p>
+<ul>
+<li>Configure Twitter and grab the most recent 20 tweets (the default is 20, which for me is more than sufficient).</li>
+<li>Loop through the tweets in reverse order (to go from oldest to newest) and for the tweets made since midnight today mail them to WordPress.</li>
+<li>Send an email (through Gmail) to your blog's secret email address with a body containing the tweet short code plus the category, comments, and publicize shortcodes to properly configure the resulting post.</li>
+</ul>
+<p>Next thing I'm going to work on is adding favorites to the script.</p>
+<p><strong>Update:</strong> Now does favorites too.</p>

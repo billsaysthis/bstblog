@@ -1,0 +1,31 @@
+---
+layout: post
+title: A new toy
+date: 2005-08-26 04:37:00.000000000 -07:00
+type: post
+published: true
+status: publish
+categories:
+- Personal
+tags: []
+meta:
+  blogger_blog: bsstqwerty.blogspot.com
+  blogger_author: BillSaysThis
+  blogger_76d35d3480289f8abae3c7a1f3961b60_permalink: '112503251651158893'
+  _twitterrelated_short_url: http://bit.ly/c7OKAi
+  _twitterrelated_short_urlHash: 9d28b157b92651b9db623f29d93ae9c3
+  _activeshortener: bitly
+  original_post_id: '4560'
+  _wp_old_slug: '4560'
+author:
+  login: blazar
+  email: blazar@gmail.com
+  display_name: BillSaysThis
+  first_name: ''
+  last_name: ''
+---
+<p>As part of the site redesign I decided to try my hand at one of the currently hot web technologies, <a href="http://www.rawsugar.com/collections/guyt/Ajax">Ajax</a>, because if I don't use this effort at least in part to keep some tech chops then I'm wasting it. So if you bop over to the <a href="http://www.billsaysthis.com/bookreviews">book</a> and <a href="http://www.billsaysthis.com/moviereviews">movie</a> review pages you can see the results: click on any title and the review will open in place where the old version simply loaded up an archive page containing the entry in which the review originally appeared.</p>
+<p>No big thing, I'm the first to admit, but getting this to work was fun for me. I've been reading about this technique for months and have been championing its use at work (successfully too). I did a bit of practical research and wound up using the <a href="http://cpaint.sourceforge.net/">CPAINT library</a> to manage the client-side JavaScript and the <a href="http://dev.blogmarks.net/wiki/ServicesBloggerPhpClient">BlogMarks Blogger PHP client</a> to retrieve the review post on demand. Love that free working code!</p>
+<p>I am still looking for the way to do one last bit. Not everyone has JavaScript working in their browser and so other Ajax developers have come up with the requirement to degrade gracefully in that case. In other words, show those readers the same old URL going to the archive page. The popular choice for this is the <a href="http://bennolan.com/behaviour/">Behaviour library</a> from Ben Nolan but CPAINT seems to be incompatible so I need to do more research.</p>
+<p>On the bigger picture, I want to say thanks to Jennifer Muller, Monica Laurence, and Garret Vreeland for suggestions on colors, fonts and layout. All fault is mine but trust this place looks much better for their input. If you have any suggestions for further improvements, <a href="http://www.billsaysthis.com/content/contact.phtml?sub=Redesign%20comments" title="Sorry for the form but I'm spamophobic">drop me a line</a>. I love to hear from readers.</p>
+<p><span style="font-style:italic;">A few minutes later:</span> Thanks to Dan for his easy to read article <a href="http://webtips.dan.info/graceful.html">Graceful Degradation</a>, it was the clue I needed and now the review pages should work with or without JavaScript.</p>

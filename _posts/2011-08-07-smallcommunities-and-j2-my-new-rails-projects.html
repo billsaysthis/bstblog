@@ -1,0 +1,41 @@
+---
+layout: post
+title: 'SmallCommunities and J2: My New Rails Projects'
+date: 2011-08-07 18:12:32.000000000 -07:00
+type: post
+published: true
+status: publish
+categories:
+- Personal
+- Rails
+tags: []
+meta:
+  _edit_last: '854'
+  aktt_tweeted: '1'
+  _activeshortener: bitly
+  _twitterrelated_short_url: http://bit.ly/o1Wfju
+  _twitterrelated_short_urlHash: 9aa176e4007a9d1f24cdc43e0b92df65
+  original_post_id: '5073'
+  _wp_old_slug: '5073'
+author:
+  login: blazar
+  email: blazar@gmail.com
+  display_name: BillSaysThis
+  first_name: ''
+  last_name: ''
+---
+<p>I'm happy to tell you that we recently launched J2, a new version of <a href="http://jhtc.org">JHTC.org</a>, and that I've spun the core code off into an open source project called SmallCommunities. <a href="http://github.com/billsaysthis/SmallCommunities">SmallCommunities is available on GitHub</a> and I would love to see some other folks join in and help me move it forward.</p>
+<p>The purpose of SmallCommunities is to provide a self-hosted subset of Meetup.com's capabilities that allows complete customization of the site's visual design while avoiding the, er, difficult to control quantity of emails sent by the Meetup service. Also, the current code expects events to be monthly, plus occasional extras, and membership to be paid while Meetup of course does not, though I think this could be easily altered.</p>
+<p>The next version of JHTC.org will be an instance of SmallCommunities. If you think SmallCommunities might be of use to your group I'd be happy to work with your web team to get you up and running!</p>
+<p>The code is written in Ruby on Rails 3.0.x and uses <a href="https://github.com/plataformatec/devise">Devise</a> for authentication, <a href="https://compass-style.org">Compass</a>, <a href="http://haml-lang.com">Haml</a> and <a href="http://sass-lang.com">Sass</a> for views and styling, RailsAdmin for managing most content and jQuery for active interfaces; SmallCommunities has a modest test base, mainly rSpec.</p>
+<p>There are three key open features:</p>
+<ul>
+<li>A flexible non-event page templating system</li>
+<li>Photo uploads for events, members and non-event pages</li>
+<li>Multi-level navigation menu support</li>
+</ul>
+<p>While SmallCommunities isn't a CMS it does need to support some static-ish pages such as About, Memberships and so on. I plan to adapt the sample code from Jose Valim's excellent new Rails book, <a href="pragprog.com/titles/jvrails/crafting-rails-applications">Crafting Rails Applications,</a> so that these pages can easily reuse existing components without the person maintaining the site content to know Rails (and not require the site admin to do this work).</p>
+<p>J2 is hosted on <a href="http://heroku.com">Heroku</a>. I really like their service and was very happy to see them acquired by Salesforce.com last year because of the added resources and stability, and our site's traffic is low enough to fit on the free service tier. However one drawback is that Heroku doesn't allow apps to upload files to the server; instead one must use an alternative such as S3 and those are paid services and for now we hope to avoid hosting costs to the extent possible.</p>
+<p>Accordingly any images must be included in the application when deployed to the server and uploaded separately to, say, Picasa (Google Images). I expect there's a suitable free service, at least for the less that 2GB worth of images we might need, just need to do some research and then loop in the appropriate Ruby gem or jQuery plugin.</p>
+<p>There are a number of good multi-level menu solutions available, this isn't a new requirement by any means, but the first couple I've tried ran into issue with some of the existing Sass/Compass CSS and I've just not had a need to solve it.</p>
+<p><strong>Note:</strong> PayPal is the only payment mechanism currently supported, to avoid the need for--and substantial hosting costs of--SSL, though I'm open to patches that add, say, ActiveMerchant, and the database schema is mostly prepared for such a change.</p>

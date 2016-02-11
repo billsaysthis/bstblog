@@ -1,0 +1,31 @@
+---
+layout: post
+title: IE CSS questions of the day
+date: 2004-02-29 23:20:00.000000000 -08:00
+type: post
+published: true
+status: publish
+categories:
+- Personal
+tags: []
+meta:
+  blogger_blog: bsstqwerty.blogspot.com
+  blogger_author: BillSaysThis
+  blogger_76d35d3480289f8abae3c7a1f3961b60_permalink: '107809683560852766'
+  _twitterrelated_short_url: http://bit.ly/abAvZi
+  _twitterrelated_short_urlHash: ebca14d1d2a9ed43524edc3fca7e4b83
+  _activeshortener: bitly
+  original_post_id: '4560'
+  _wp_old_slug: '4560'
+author:
+  login: blazar
+  email: blazar@gmail.com
+  display_name: BillSaysThis
+  first_name: ''
+  last_name: ''
+---
+<p>I'm working on a small commercial website and running into a few CSS issues which I sure could use a little help corralling, if anyone out there can help.</p>
+<p>First, IE doesn't respect the min-height property. Oh well, one could rant or rave but with little practical application. <a href="http://scoblecomments.scripting.com/comments?link=http%3A%2F%2Fradio.weblogs.com%2F0001011%2F2004%2F02%2F29.html%23a6713&amp;p=6713&amp;u=1011">Scoble suggests</a> a one pixel wide image and it does the job, I suppose, but really violates my sense of (err) propriety. I'd really like to find a CSS-based solution.</p>
+<p>Next, when I set the width for a &lt;div&gt; which is only one line long to 100%, the displayed width of the element varies (wildly) depending on the text used. Even though none of the possible texts are anywhere near as long as the linewidth. Why and how do I avoid this? Two examples are &lt;p&gt;[Products]&lt;/p&gt; and &lt;p&gt;[Consulting]&lt;/p&gt;. Setting the width to a specific pixel count doesn't have this problem but then I get into a guessing game as to just what number to use. (The CSS is {position: relative; margin: 0; background-color: lightblue; width: 671px; font-size: 75%;}, although the margin: 0 doesn't really do anything but that's another story.)</p>
+<p>Similarly, if I set &lt;body&gt; to have a width of, say, 685px in the stylesheet and then set another style, used to control a &lt;div&gt;, to the exact same number, how come the body is wider than the div? (I can tell by setting a border around the body). Strangely, a different div using a different style but also with width set to that same number, <em>does stretch</em> to the size of &lt;body&gt;.</p>
+<p>Thanks for the assist, Rob.</p>

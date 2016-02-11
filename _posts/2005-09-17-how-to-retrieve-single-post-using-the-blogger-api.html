@@ -1,0 +1,30 @@
+---
+layout: post
+title: How to retrieve single post using the Blogger API
+date: 2005-09-17 17:57:00.000000000 -07:00
+type: post
+published: true
+status: publish
+categories:
+- Personal
+tags: []
+meta:
+  blogger_blog: bsstqwerty.blogspot.com
+  blogger_author: BillSaysThis
+  blogger_76d35d3480289f8abae3c7a1f3961b60_permalink: '112698136809211169'
+  _twitterrelated_short_url: http://bit.ly/dikoKE
+  _twitterrelated_short_urlHash: 14654f3cd0ac659535516b47e34e349c
+  _activeshortener: bitly
+  original_post_id: '4560'
+  _wp_old_slug: '4560'
+author:
+  login: blazar
+  email: blazar@gmail.com
+  display_name: BillSaysThis
+  first_name: ''
+  last_name: ''
+---
+<p>I shouldn't have had such a difficult time finding out how to implement the simplest action possible (IMO) with the API, pulling out a single post from a Blogger blog. The answer I finally came up with uses the newer <a href="http://code.blogger.com/archives/atom-docs.html">ATOM API</a>, which is why I couldn't simply use the <a href="http://dentedreality.com.au/bloggerapi/">class library</a> <a href="http://dentedreality.com.au/">Beau Lebens</a> and I published a few years ago. If Blogger wasn't the poor stepchild at Google, we wouldn't have to be scrounging so hard for simple code like this either--and maybe it's my poor programming skills that didn't allow me to see this as quickly as others might--but there you go.</p>
+<p>Down to details. Get the BlogMarks <a href="http://dev.blogmarks.net/wiki/ServicesBloggerPhpClient">PHP client libary</a> (thanks <a href="http://groups.google.com/group/bloggerDev/browse_thread/thread/e19f8983e2e348af/9fce90757e82acbe">Francois</a>) and load to your server. The code is then trivial:
+<pre>require_once("/path/to/file/Services/Blogger.php");<br /><br />function getOnePst($version)<br />/* returns the text as a string ready to print<br />   $version is either:<br />   "CONTENT" - content of post only<br />   "ALL"     - title and content<br />*/<br />{<br />  // set up your authentication info<br />  $blogid = "Your blog ID number";<br />  $username = "User Name";<br />  $password = "Password";<br />  // d'oh, probably pass this in as a parameter in a real version<br />  $postID = "Entry to retrieve";<br /><br />  // create the Blogger object<br />  $blogger = &amp;new Services_Blogger($blogid, $username, $password);<br />  // get the post<br />  $ent = $blogger-&gt;getEntry($postID);<br />  if (PEAR::isError($ent)) {  // error handling<br />      // return the error code, message<br />      $r = $ent-&gt;getCode().':'.$ent-&gt;getMessage();<br />  } else {<br />      // you could make the return an object or something for<br />      // more sophisticated handling<br />      if($version == "CONTENT") {  // content only<br />          $r  = html_entity_decode($ent['content']);<br />      } else {          // full entry<br />          $ttl = html_entity_decode($ent['title']);<br />          $bdy = html_entity_decode($ent['content']);<br />          $r  = "&lt;h2&gt;$ttl&lt;/h2&gt;&lt;div class="your_post_style_class"&gt;$bdy&lt;/div&gt;";<br />      }<br />  }<br /><br />   return $r;<br />} </pre>
+<p>Use at your own risk, no warranty or guarantee implied or provided, no support offered though polite email requests may be answered. I'm mainly posting this so the next person has an easier time finding the answer, like I said the code itself is fairly trivial and the BlogMarks package does all the real work.</p>

@@ -1,0 +1,48 @@
+---
+layout: post
+title: 'OS X: So far Jam, not Jelly'
+date: 2006-08-29 16:04:00.000000000 -07:00
+type: post
+published: true
+status: publish
+categories:
+- Personal
+tags: []
+meta:
+  blogger_blog: bsstqwerty.blogspot.com
+  blogger_author: BillSaysThis
+  blogger_76d35d3480289f8abae3c7a1f3961b60_permalink: '115686936353057630'
+  _twitterrelated_short_url: http://bit.ly/b5MbyN
+  _twitterrelated_short_urlHash: f648dd87cf96d8c1806b1758ee64344a
+  _activeshortener: bitly
+  original_post_id: '4560'
+  _wp_old_slug: '4560'
+author:
+  login: blazar
+  email: blazar@gmail.com
+  display_name: BillSaysThis
+  first_name: ''
+  last_name: ''
+---
+<p>Just a little status report:</p>
+<p>Recently I'd been moving to a develop locally, commit to a <a href="http://subversion.trigris.org">Subversion repository</a> on TextDrive and deploy from there to production. <a href="http://blog.wolfman.com/">Jim Morris</a> has been very kindly tutoring me, but that was on the Windows box and I was hoping to get Miami Steve set up without pestering him. Installing Subversion--heck installing most software on OS X--is trivial, and definitely easier than Windows.</p>
+<p>However, there is to some degree less control on <em>where</em> applications get installed. Generally they put themselves in the Applications folder and all's fine. Developer tools, probably related to the *NIX underpinnings of this system, don't necessary do that and such was the case with SVN.</p>
+<p>Of itself that wasn't an issue but /usr/local isn't in the system path and so add-ons that use SVN couldn't find it. Don't get me started about adding a directory to the path! Apple doesn't seem to believe this is necessary information so it isn't in the documentation, nor is it part of the training their Support "product specialists" get. Eventually I found a tip online and got over the hump.</p>
+<p>Connecting to that repository on my web host and cheking out a working copy was definitely a PITA. No matter what I tried it didn't work (including tools like <a href="http://www.lachoseinteractive.net/en/community/subversion/svnx">svnX</a> and <a href="http://macromates.com">TextMate</a>, and generating a key and storing it in KeyChain) and at the command line I kept getting asked for the password for wsl@billsaysthis.com. "wsl" is my OS X account short name and there is no such account on the server so of course this wasn't working. Then I saw an article somewhere and thought to add the real server account name to the Subversion URL and, boom!, here come all the files.</p>
+<p>Apache is included in the base OS X install, activating it is just clicking a button in System Preferences. PHP is also included but I didn't realize this and downloaded an installed my own copy. MySQL was again just a download and a few button clicks but apparently works best if the computer is restarted before using, which took my a half hour or so of frustration before understanding.</p>
+<p>Rails was little more involved. The <a href="http://hivelogic.com/articles/2005/12/01/ruby_rails_lighttpd_mysql_tiger">standard how-to article from HiveLogic</a> expects you to compile everything locally whereas on Windows a one-click installer is provided. There is the <a href="http://locomotive.raaum.org">Locomotive</a> package but I wanted to use the Apache, MySQL and PHP already installed and to have Rails be a first class installation rather than, and this is not a great word choice but best I can think of, a second level, sort of temporary visitor. I had the same misgivings about the Windows equivalent, <a href="http://nstantrails.rubyforge.org/">InstantRails</a>, after using it for months.</p>
+<p>To build Ruby, RubyGems and get Rails one needs gcc. Which comes in the <a href="developer.apple.com/tools/xcode/">XCode tools package</a>, weighing in at nearly a gigabyte. Let's just say the bigger hard disk might have been a better choice than I realized ;) Still a few copy and pastes later and all was well.</p>
+<p>Still need to figure out how to make my PHP website code, including WordPress, work locally without making changes that break it on the live website.</p>
+<p>Other software I've used and been happy with so far:
+<ol>
+<li><a href="http://littlemachines.com">O2M</a> from Little Machines, which made migrating my email archives fairly trivial, is still the only software I paid for and that was just $10.</li>
+<li><a href="http://www.opencommunity.co.uk/vienna2.html">Vienna</a>, an open source RSS reader</li>
+<li>Safari for web browser, though I've installed Camino and <a href="http://flock.com">Flock</a> too and am probably going to switch to one of them or Firefox soon since Safari doesn't have the extensibility to fix limitations as the others do</li>
+<li><a href="http://www.adiumx.com/">AdiumX</a> is a very nice multi-service IM client</li>
+<li><a href="http://www.blacktree.com/">QuickSilver</a> is the most highly recommended Mac application I've seen but I'm not quite sure why just yet</li>
+<li>TextMate seems good for text editing and I'll buy a license before the 30 day trial is finished</li>
+<li>Mail.app is okay but the junk mail filter is less efficient than I'd like</li>
+<li><a href="http://cyberduck.ch/">Cyberduck</a> for FTP is okay but I might need to step up and get the non-free <a href="http://www.panic.com/transmit/">Transmit</a></li>
+</ol>
+<p>Haven't yet gotten to the productivity apps yet, like MS Office, iWork or <a href="http://www.neooffice.org/">NeoOffice</a> though I want to try the latter first as it seems to be the best free option today.</p>
+<p>More later ;)</p>

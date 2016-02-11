@@ -1,0 +1,32 @@
+---
+layout: post
+title: 'Unethical corporate behavior: comScore'
+date: 2006-12-11 00:38:00.000000000 -08:00
+type: post
+published: true
+status: publish
+categories:
+- Personal
+tags: []
+meta:
+  blogger_blog: bsstqwerty.blogspot.com
+  blogger_author: BillSaysThis
+  blogger_76d35d3480289f8abae3c7a1f3961b60_permalink: '116580181204640436'
+  _twitterrelated_short_url: http://bit.ly/cgYKZ9
+  _twitterrelated_short_urlHash: d466b80f8a2287e224bfd6ccac4703ce
+  _activeshortener: bitly
+  original_post_id: '4560'
+  _wp_old_slug: '4560'
+author:
+  login: blazar
+  email: blazar@gmail.com
+  display_name: BillSaysThis
+  first_name: ''
+  last_name: ''
+---
+<p>Forbes.com asks <a href="http://www.forbes.com/security/2006/12/07/internet-security-research-tech_cx_ll_1208comscore.html">How Much Privacy?</a> in an article on the practices of online marketing research firm comScore. Apparently the firm tempts people into using their software with small rewards (gift cards and the like) so they can track web activity, correlate it with user-supplied demographics and sell the (aggregated) information to some very big name corporate clients. [<span style="font-style:italic;">via </span><a href="http://rss.slashdot.org/%7Er/slashdot/eqWf/%7E3/59557399/article.pl">Slashdot</a>]</p>
+<p>Not my cup of tea but some single digit millions of my fellow Americans are okay enough with it to install the software. This begs the question of how well these folks understand what they've agreed to but caveat emptor, right?</p>
+<p>Except that comScore goes just a bit further than most anyone but the geekiest will be able to understand. Their software, you see, inserts a root certificate authority into your Windows Registry (yay for us Macsters) which allows them to track your activity into otherwise secure websites. That is, after depending for years on the fact that when you see a URL beginning with https instead of http you've loaded a secure webpage for, say, online shopping or banking you no longer can feel so safe.</p>
+<p>The root CA allows comScore to intercept whatever you send even over those seure http links. The company, of course, claims that they aren't going to store or use any bank account or credit card numbers or passwords that passes through their software's filter--which gets a crack at every page visited by their users. Perhaps they won't.</p>
+<p>Even if we're to trust them, which is an increasingly unlikely proposition, how can one rely on the integrity of their own servers and network when its clearly a juicy target for the criminal types who are attempting to hack into as many potentially useful systems as they can manage?</p>
+<p>Further, what if some black hat cracker decided to take a copy of the software, hack it to replace the address of the comScore server with one of their own and then put the package back out for download far and wide? By the time the victims realized what's happened these criminals will have feasted on the ill-gotten data. Anyone who thinks comScore is going to take liability for such victimization, well, their the most likely folks to download the software.</p>

@@ -1,0 +1,33 @@
+---
+layout: post
+title: Playing with Lyceum
+date: 2006-03-04 22:13:00.000000000 -08:00
+type: post
+published: true
+status: publish
+categories:
+- Personal
+tags: []
+meta:
+  blogger_blog: bsstqwerty.blogspot.com
+  blogger_author: BillSaysThis
+  blogger_76d35d3480289f8abae3c7a1f3961b60_permalink: '114151040627438082'
+  _twitterrelated_short_url: http://bit.ly/cucgvd
+  _twitterrelated_short_urlHash: ea4c48ae39686d153b28300b678a8df3
+  _activeshortener: bitly
+  original_post_id: '4560'
+  _wp_old_slug: '4560'
+author:
+  login: blazar
+  email: blazar@gmail.com
+  display_name: BillSaysThis
+  first_name: ''
+  last_name: ''
+---
+<p>One of the drawbacks to WordPress, for me at least, is that you pretty much have to install--and maintain--a copy of the software for each blog published. So any updates, themes, plugins, settings all have to be managed separately for each. So far I have two WP blogs on this server, <a href="http://www.billsaysthis.com/movies/">Bill's Movie Reviews</a> and <a href="http://www.billsaysthis.com/wp/">bill:politics</a>.</p>
+<p>The other day, a team at ibiblio (<a href="http://ibiblio.org/fred">Fred Stutzman</a>, <a href="http://blog.johnjosephbachir.org/">John Joseph Bachir</a>, and <a href="http://sayanc.net/">Sayan Chakraborty</a>), released <a href="http://lyceum.ibiblio.org/">The Lyceum Project</a>. Here's their description of it:<br /><span style="font-style:italic;"></span><br />
+<blockquote><span style="font-style:italic;">Lyceum is a stand-alone mutli-user blogging application, designed for the enterprise. Utilizing the fantastic, intuitive </span><a href="http://wordpress.org/">WordPress</a><span style="font-style:italic;"> blogging engine at its core, Lyceum enables stand-alone, multi-user blog services for small and high-volume environments. Lyceum is GPL-licensed, under active development, and free to use.</span></p></blockquote>
+<p>Now, you might ask, what about <a href="http://mu.wordpress.org/">WPMU</a>? I kept looking at it, every few months but there just never seemed to be much progress. Certainly the team never released any documentation and the whole 'Warning, warning, danger Will Robinson' cautions were the most significant factors keeping me away. Given that Lyceum has no meaningful documentation and the FAQ gives a similar position on status, I'm not terribly sure why I reacted differently. Maybe it was the rain or just their blog's open tone of voice.</p>
+<p>Anyway, I told John I'd at least install it and give him feedback. And so I did. From a unit testing perspective it seems pretty strong. I was able to install without any real trouble, created a regular user with a blog, installed the theme from Bill's Movie Reviews and a few plugins, wrote, edited, and deleted posts, added a page. All good.</p>
+<p>There are two key deficiencies that hold me back, for the moment, from switching. First, there's no migration utility to bring over content from an existing blog. Second, the base blog URLs are not pretty (the project do not appear to be using the software for their own blog, just plain WP, so don't just by <a href="http://lyceum.ibiblio.org/">it's address</a>); the sample I created gets a URL like <span style="font-style:italic;">example.com/lyceum/src/lyceum/1</span> and I need it to be like <span style="font-style:italic;">example.com/blogname</span>.</p>
+<p>So definitely worth keeping in touch with the effort. I asked John if he has an answer on the URL, maybe some .htaccess magic, and offered to help with a migration script. For first public release, have to give the guys two thumbs up.</p>

@@ -1,0 +1,30 @@
+---
+layout: post
+title: That PHP code
+date: 2002-10-08 19:07:00.000000000 -07:00
+type: post
+published: true
+status: publish
+categories:
+- Personal
+tags: []
+meta:
+  blogger_blog: bsstqwerty.blogspot.com
+  blogger_author: BillSaysThis
+  blogger_76d35d3480289f8abae3c7a1f3961b60_permalink: '85539734'
+  _twitterrelated_short_url: http://bit.ly/98ROXP
+  _twitterrelated_short_urlHash: 8d8a60bf31f3b43f6737fc2643e8cd6f
+  _activeshortener: bitly
+  original_post_id: '4560'
+  _wp_old_slug: '4560'
+author:
+  login: blazar
+  email: blazar@gmail.com
+  display_name: BillSaysThis
+  first_name: ''
+  last_name: ''
+---
+<p>Well, I finally seem to have pulled it all together. Both the Countdown list on the top right of the main page and the Birthday and Anniversary lists on <a href="http://www.billsaysthis.com/content/misc/imp_dates.phtml">Important Dates</a> have been implemented using the code. A little bit of clean up work and I expect to post it for download. I'm even thinking of turning it into an article for one of the PHP magazines or webzines, probably know more about that later.</p>
+<p>Definitely need to say thanks to Andre Naess for his replies to my sometimes blithering doltishness in the comp.lang.php newsgroup. Thanks Andre! And thanks to the people who put their time and effort into the MySQL open source database project (<a href="http://www.mysql.com/doc/en/Date_and_time_functions.html">MySQL Manual | 6.3.4 Date and Time Functions</a> was incredibly useful) and, of course, <a href="http://www.php.net">PHP</a>.</p>
+<p>So, what does this class do? First, store some information about some number of events into a database: event name, the date it occurs on, associated URL, category, and active status. The basic code grabs the records for a given category, calculates the number of days until the event, filters them based on active status and that the event takes place in the future, and provides a string formatted for inclusion in an HTML page (the list used on the main page). An elaboration, called a child class in object-oriented programming terms, customizes the filtering (all birthdays by definition are in the past), and uses a different formatting for the result; the number of days until the next birthday is calculated and used to <b>emphasize</b> dates less 31 days away.</p>
+<p>So essentially this is the guts of what could be a web-based reminder service, not totally unlike Userland's <a href="http://www.mailtothefuture.com/">MailToTheFuture</a>, that could be enhanced to support multiple users and some type of notification service. One could also add additional child classes to handle different types of events. But I wrote this mostly for my own use, to stretch my programming muscles a tad and to have a more automated way to handle the Countdowns list.</p>

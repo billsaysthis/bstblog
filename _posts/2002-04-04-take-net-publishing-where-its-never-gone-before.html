@@ -1,0 +1,35 @@
+---
+layout: post
+title: Take Net publishing where it's never gone before
+date: 2002-04-04 20:18:00.000000000 -08:00
+type: post
+published: true
+status: publish
+categories:
+- Personal
+tags: []
+meta:
+  blogger_blog: bsstqwerty.blogspot.com
+  blogger_author: BillSaysThis
+  blogger_76d35d3480289f8abae3c7a1f3961b60_permalink: '75058705'
+  _twitterrelated_short_url: http://bit.ly/cJ4eTV
+  _twitterrelated_short_urlHash: 4adae3080acff4042fe097cf0e385390
+  _activeshortener: bitly
+  original_post_id: '4560'
+  _wp_old_slug: '4560'
+author:
+  login: blazar
+  email: blazar@gmail.com
+  display_name: BillSaysThis
+  first_name: ''
+  last_name: ''
+---
+<p>[Note: this is not about some great new way to get porn over the Internet.] [Erased cliched introduction before publishing] Services are appearing to take Web communication to the next level: syndication. Using one form or another of a standard called RSS (Rich Site Summary), websites--even those as simple as BillSaysThis--can make content available through distributors automatically with little more effort than a few minutes to sign up. <a href="http://radio.userland.com">Some</a> content publishing tools automate this process (<a href="http://pro.blogger.com">some tools</a> promise it's coming real soon), some sites use <a href="http://www.voidstar.com/rssify.php">scripts</a> to generate this dynamically, and others have fans/audience members who write something site-specific.</p>
+<p>One of the prime movers behind this effort is Jeff Barr's <a href="http://www.syndic8.com/index.php?Welcome=1">Syndic8.com</a>. This site has available over 7200 individual feeds written in at least 18 languages and is now <a href="http://www.syndic8.com/services.php">experimenting with web services</a> through an XML-RPC API. This API allows other sites and applications to interact with the Syndic8 database, not only to discover or manage individual feeds but to look at aggregations--categories, locations, activity. For example, the weblog you are reading now <a href="http://www.syndic8.com/feedinfo.php?FeedID=7088&amp;Section=statistics&amp;SummaryID=747&amp;Mode=show">is in there</a>.</p>
+<p>One of the current Syndic8 efforts, driven by Bill Kearney, is to add geographic information to the feeds through the API. In fact, he wrote a script that looks up the domain to get the IP address and the location of that address (which is in the Whois database) and then uses the API to feed it to Syndic8. Of course for the most part the location determined by this brute force methodology is incorrect, for example there is no correlation between this website and the city of Davie, Florida. But Kearney has taken the first step and now the creators of the feeds can see what is happening and put in the correct data. This would mean adding the location information as metadata in their RSS; my pages have it but due to the way the RSS and underlying weblog pages are generated, it is not yet in the RSS. There are complications caused by differing versions of RSS and the toolkits used to produce the files but what else is new in Webland?</p>
+<p>Here is one result of the aggregated information:</p>
+<p><a href="http://photos.groups.yahoo.com/group/syndic8/vwp?.dir=/maps&amp;.src=gr&amp;.dnm=map-pins.jpg&amp;.view=t&amp;.done=http%3a//photos.groups.yahoo.com/group/syndic8/lst%3f%26.dir=/maps%26.src=gr%26.view=t"><img src="{{ site.baseurl }}/assets/s8_map_pins.jpg" height="250" alt="Syndic8 Pin Map, April 4, 2002" /></a></p>
+<p>I asked Bill for the details on how he did the work so far:</p>
+<p>"I did most of the work using perl, PHP, Radio, MySQL and XML-RPC calls.</p>
+<p>I extracted the feeds from the Syndic8 server database using GetFeedInfo calls. I then locally extracted the hostname and looked up it's IP address.  Once I had the IP address I used the Geo-IP and NetGeo database to cross-reference it. This info was then sent back up to the Syndic8 database using the SetLocationInfo call.</p>
+<p>So the latitude/longitude pair info is based solely on the server IP address info as can be determined from thet NetGeo database.  That's largely based on the whois databases.  This means it's only as accurate as the info contained in that database."</p>

@@ -1,0 +1,37 @@
+---
+layout: post
+title: Missed the 1 May deadline, but a reboot is now in place
+date: 2007-05-15 00:00:00.000000000 -07:00
+type: post
+published: true
+status: publish
+categories:
+- Personal
+tags: []
+meta:
+  blogger_blog: bsstqwerty.blogspot.com
+  blogger_author: BillSaysThis
+  blogger_76d35d3480289f8abae3c7a1f3961b60_permalink: '4818819714119172167'
+  _twitterrelated_short_url: http://bit.ly/bJMqM0
+  _twitterrelated_short_urlHash: 59f5c2e3b039b156b3f5d977ec7fa255
+  _activeshortener: bitly
+  original_post_id: '4560'
+  _wp_old_slug: '4560'
+author:
+  login: blazar
+  email: blazar@gmail.com
+  display_name: BillSaysThis
+  first_name: ''
+  last_name: ''
+---
+<p>There's a web designer tradition, or vogue, that one should freshen up one's website each May Day and though I'm neither a web designer nor a follower of fashion I do enjoy using this site as a learning environment. So if you're reading this post from the RSS feed or on some other aggregator/content stealing site <a href="http://billsaysthis.com/">please click through</a> to see what I'm writing about here.</p>
+<p>There are three changes in the new design:
+<ol>
+<li>The main navigation element has been pulled out of the right side column into a top of the page horizontal menu.</li>
+<li>The right side column has been significantly simplified. In fact, if it wasn't for the $100 check from Google every six months or so I'd probably remove the column completely and go with a one column layout.</li>
+<li>Clicking the top menu link next to <span style="font-style:italic;">Movies</span> labeled <span style="font-style:italic;">Latest</span> slides open a list of the five most recent entries in <a href="http://billsaysthis.com/movies">my movie blog</a>.</li>
+</ol>
+<p>This last item was inspired by a similar, albeit more substantial content-filled, implementation at <a href="http://latherrinserepeat.org/">Lather Rinse Repeat</a> (click the image that says Click Me at the top of the page), which came to my attention via the <a href="http://a.wholelottanothing.org/">redoubtable web celeb mathowie</a>.</p>
+<p>Previously I used the <a href="http://developer.yahoo.com/yui/">Yahoo User Interface Library</a> to deliver the last 5 block, using its very nice Panel widget and Event utility but some months ago I started having problems with retrieving and processing the movie blog RSS feed. After experimenting with many different open source RSS libraries in both PHP and JavaScript and several different JavaScript user interface libraries, the solution was the very new <a href="http://googleajaxsearchapi.blogspot.com/2007/05/ajax-feed-api-update.html">Google FeedControl</a> and the <a href="http://mootools.net/">MooTools</a> JavaScript library.</p>
+<p>Since I am more of an enlightened amateur than a professional programmer these days most of the difficulty was surely due to my skill level rather than any shortcomings in the various libraries I was unable to make work for this small implementation. Even now I don't really think the code does precisely what I'd like, mostly due to the FeedControl delivering each RSS item as a separate and complex set of divs, but it does appear to work on OS X and Windows, and on Internet Explorer, Firefox and Safari.</p>
+<p>If you see any problems or nits I should fix, drop me a line. Or just to give me your two cents on the new layout, I always enjoy hearing from people who read this site.</p>

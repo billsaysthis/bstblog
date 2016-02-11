@@ -1,0 +1,50 @@
+---
+layout: post
+title: Backing up Blogger
+date: 2002-12-08 19:54:00.000000000 -08:00
+type: post
+published: true
+status: publish
+categories:
+- Personal
+tags: []
+meta:
+  blogger_blog: bsstqwerty.blogspot.com
+  blogger_author: BillSaysThis
+  blogger_76d35d3480289f8abae3c7a1f3961b60_permalink: '90028028'
+  _activeshortener: bitly
+  _twitterrelated_short_url: http://bit.ly/ifWv2r
+  _twitterrelated_short_urlHash: 89c72044e7d4cf1000cd01536cde2080
+  original_post_id: '4560'
+  _wp_old_slug: '4560'
+author:
+  login: blazar
+  email: blazar@gmail.com
+  display_name: BillSaysThis
+  first_name: ''
+  last_name: ''
+---
+<p>A recent conversation on Blogger User Support, the peer support community on Yahoo! Groups, led me to devise a set of instructions for people who want to periodically backup their blogs. Here's what I wrote:</p>
+<p>One thing that not a lot of people using Blogger do, though it would help with these concerns, is to output a backup file. Making a backup is actually quite simple and can be done at some reasonable frequency, such as weekly or monthly; you do back up your own data files, right? Here's one way to do it, which I'm cribbing from the way <a href="http://www.movabletype.org/docs/mtmanual_importing.html#exporting%20blogger%20entries">MovableType instructs</a> users who want to import Blogger posts:</p>
+<p>0) Make (or after the first time, use) a standard backup directory. If you have your own website, this directory could be on that site. All the following instructions assume you'll use this directory.</p>
+<p>1) Open your main template. Copy the template and save it to a local file. For completeness sake you might want to take a copy of your archive template as well. I recommend a naming scheme for these files such as main_template_MM_DD_YY.txt and archive_template_MM_DD_YY.txt where MM is month, DD day, and YY year. I include the dates since over time you'll accumulate several. Conversely you could leave off the date and only have the most recent.</p>
+<p>2) (optional, this is to save only the posts and not extra formatting) Replace your main template with the following, with non-Pro users leaving off the title and URL fields since they won't be present and Pro users including them only if used:</p>
+<p>(Delete the dashes before each of the keywords, Blogger choked if I tried to publish this without something to differentiate from the real tags)</p>
+<p>&lt;-Blogger&gt;<br />
+<br />AUTHOR:<br />
+<br />DATE:<br />
+<br />TITLE:<br />
+<br />URL:<br />
+<br />-----<br />
+<br />BODY:</p>
+<p>--------<br />
+<br />&lt;-/Blogger&gt;</p>
+<p>This step may be skipped if you prefer, which would simply make your backup file bigger and also have it include whatever other matter you generally publish. I still recommend saving off a copy your template since Blogger does often have transient issues with template.</p>
+<p>3) Open the Settings page, Publishing tab. Change the Blog file name setting to _MM_DD_YY.txt where  is, well, your blog name; this will let you easily go back to a specific time and prevent you from overwriting your normal blog file. If you have your own website, and want to put these backup files in a directory other than the one you normally publish to, also change the Server Path setting to match. Adjust the Blog URL to account for these changes. Note: you probably want to make a note of the original settings for any of these changed fields so afterwards you can change things back.</p>
+<p>4) Click to the Formatting tab. Change the Show on Main page settings to 999 and days' posts, which is the highest number allowed, to ensure all (or as much as possible) of your posts are included. Conversely, you could change the settings to only capture the last week or month or other time period (depending on your backup schedule) in each backup file. I prefer to have everything in one file at least until my blog grows older than Blogger will allow me to put out in one shot.</p>
+<p>4a) Change the Timestamp format to the first choice (mm/dd/yyyy hh:mm:ss am/pm), which is necessary since we don't use any date headers in the output file.</p>
+<p>5) If you use BlogSend, turn it off before publishing (or use it to email a copy of the output file to some useful place).</p>
+<p>6) Save your changes and click Publish. Blog*Spot users will need to open the result in a browser and use the browser's File | Save As function to grab a copy for storage. If you're storing these three files (blog output plus two templates), I recommend moving (creating) a Zip file with them for each backup (named _bu_MM_DD_YY.zip).</p>
+<p>7) Finally, go back to Blogger and restore your normal publishing settings and template. Click publish to put back your normal file (which actually should not have had any changes) and test that you restored everything properly.</p>
+<p>Less than 10 minutes a month (or week) for a hunk of peace of mind.</p>
+<p><em>Update:</em> Rumor has it that blog backups in RSS will be coming soon as a standard feature to Blogger but no idea if this will be for all users or Pro only. So all this yummy goodness will be of little value very soon. I hope.</p>

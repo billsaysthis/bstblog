@@ -1,0 +1,34 @@
+---
+layout: post
+title: DeepPurple gets a makeover
+date: 2003-03-23 16:05:00.000000000 -08:00
+type: post
+published: true
+status: publish
+categories:
+- Personal
+tags: []
+meta:
+  blogger_blog: bsstqwerty.blogspot.com
+  blogger_author: BillSaysThis
+  blogger_76d35d3480289f8abae3c7a1f3961b60_permalink: '200032463'
+  _twitterrelated_short_url: http://bit.ly/9iLtqI
+  _twitterrelated_short_urlHash: f339ee6714dac3a8f413f39214020c2b
+  _activeshortener: bitly
+  original_post_id: '4560'
+  _wp_old_slug: '4560'
+author:
+  login: blazar
+  email: blazar@gmail.com
+  display_name: BillSaysThis
+  first_name: ''
+  last_name: ''
+---
+<p>I've been interested in Linux for some time now, even looked into switching this Sony VAIO that's my main machine to it a year ago, but until now I never had the hardware or sufficient motivation. With the Sweet One getting her new toy Twiggy last month, though, I had the hardware in the form of her old box DeepPurple and the motivation came from, well, from somewhere unknown. But it was there.</p>
+<p>So the three of us (me, DeepPurple, and the Sony) packed up yesterday afternoon and headed for the <a href="http://www.linuxmafia.com/cabal/">CABAL</a> meeting in Menlo Park. The group, which yesterday consisted of our host Rick and the geek archetype Ross, turned out to be extremely generous, intelligent, and friendly. Reminded me a lot of the core members of the Clipper Club of NJ who I blame as much as anyone for my success in the software biz. Blame in a good way, as that's where I met David Chazin, my first mentor.</p>
+<p>My goals with Linux are pretty simple: become a competent user of the system. I don't want to devolve into a rabid religious fanatic or develop a craving to compile my own custom kernel/personal distribution. Being able to know my way around the OS at the application and general configuration level seems good enough. Run a test server for my web application development work with PHP and MySQL instead of testing live on billsaysthis.com as I do now. Explore Open Office, Mozilla, KDE, and find an UltraEdit-like text editor--no vi for this guy!</p>
+<p>Rick, Ross, and I spent a little while discussing this to consider which distro would be the best choice. Rick pulled out a CD album that was amazingly thick with a couple of dozen different choices! <a href="http://www.dangerousmeta.com">garrett</a> had recommended <a href="mandrake.org">Mandrake</a>, so that was a strong possibility. Red Hat was also considered because it seems to have the biggest penetration in corporations. In the end, though, we decided on <a href="http://www.knopper.net/knoppix/index-en.html">Knoppix</a>, a very interesting variant out of Germany.</p>
+<p>We chose Knoppix for two main reasons plus one consideration. First, it's based on <a href="http://www.debian.org/">Debian</a>--that's Rick's general choice and he'll be one of my primary sources of support--which has a lot of developers and therefore strong application coverage plus probably the best install and update mechanism in <a href="http://www.debian.org/doc/manuals/apt-howto/index.en.html">apt-get</a>. Second, Knoppix builds on top of Debian extensive hardware detection and hardware driver support plus the ability to run a really complete desktop right off the CD (by complete desktop I mean a large selection of applications, development tools, and utilities). The consideration was that installing a different distro next week or next month, to try it out, is very easy now that the machine is set up with a Linux.</p>
+<p>Initially we used the run from CD capability to test the machine. DeepPurple passed the test easily and I could see, as it booted Knoppix, the various bits of hardware being detected. The OS has a utility to install itself to a machine while running, so that was step two, and Knoppix does this with just a few configuration questions. Creating a filesystem (we went with ext3, a journaliing type) was next, wiping out the Windows partitions--no looking back now! A few checks to ensure things were in order and we rebooted, bringing the box up under it's own power. Sort of felt like watching a baby take her first few tentative stabs at standing without support.</p>
+<p>Voila! After logging in, the KDE desktop came up and at first, everything seemed to work just fine. Ross and I brought up Konquerer and a few utilities. Then I opened Mozilla and tried to load this site. Oops, the machine couldn't find it! Rick to the rescue--for some reason Knoppix had not detected the Ethernet card and didn't install the DHCP client. A little investigation and some comparisons with his wife Deirdre's iBook, though, and we found the necessary 8139too driver. An apt-get and some judicious conf editing was all the effort needed to fix that.</p>
+<p>It was getting a little late by this point and my stomach was beginning to growl, so I said my goodbyes, packed up, and headed home to TS1 and a delicious steak dinner. Tomorrow I'll get DeepPurple hooked into the network here and see what fun I can have. Big shout out to Rick and Ross for all their help!</p>

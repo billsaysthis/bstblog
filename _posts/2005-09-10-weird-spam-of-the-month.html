@@ -1,0 +1,33 @@
+---
+layout: post
+title: Weird spam of the month
+date: 2005-09-10 01:58:00.000000000 -07:00
+type: post
+published: true
+status: publish
+categories:
+- Personal
+tags: []
+meta:
+  blogger_blog: bsstqwerty.blogspot.com
+  blogger_author: BillSaysThis
+  blogger_76d35d3480289f8abae3c7a1f3961b60_permalink: '112632163931441918'
+  _twitterrelated_short_url: http://bit.ly/adeH3l
+  _twitterrelated_short_urlHash: f0da272a7651304a8b289fb22d823a61
+  _activeshortener: bitly
+  original_post_id: '4560'
+  _wp_old_slug: '4560'
+author:
+  login: blazar
+  email: blazar@gmail.com
+  display_name: BillSaysThis
+  first_name: ''
+  last_name: ''
+---
+<p>Though my attempt was probably both too little and too late some time ago I removed any direct email addresses on the website and replaced them with a contact form linked from my name on every page (look in the copyright). The email address the form sends messages to, which was never used anywhere else and not directly exposed, seemed safe.</p>
+<p>In the last few days, though, somebody or someone's script has found the form and is filling it out repeatedly. I guess the idea is that a useful percentage of web forms will trigger an automated response that's of interest to the programmer though just what isn't clear to me. The script fills in the form fields with the same data, an email address of a four or five character random group of letters (such as xtpku) at this domain.</p>
+<p>What's truly odd is the subject line of the email. First, that it's filled in at all since I generate the subject in my script and, <a href="http://www.billsaysthis.com/content/contact.phtml?sub=WeirdSpam%20blog%20post">as you can see</a>, don't give it as a field for a writer to enter. Second is the text used:<br />
+<blockquote>[the email address used in the form] Content-Type: multipart/mixed; boundary="===============1278934073==" MIME-Version: 1.0 Subject: 7c77fe36 To: [the email address used in the form] bcc: <span>[someone else's email]</span> From: [the email address used in the form] This is a multi-part message in MIME format. --===============1278934073== Content-Type: text/plain; charset="us-ascii" MIME-Version: 1.0 Content-Transfer-Encoding: 7bit koxsakoifn --===============1278934073==--</p></blockquote>
+<p>Kind of looks like the spammer's script figured out the name of my script, I'm not versed in these matters at all, and tried to force it to send a copy of whatever's generated to a controlled email address (in red above). But of course I don't believe it worked since a bcc in a subject line isn't going to be executed by the PHP engine. Also looks to have been cut off--I bet subject lines can't be more than 255 characters.</p>
+<p>Amusing more than annoying and hopefully who/whatever clown's behind it will get off the kick soon. Just enough of a pain to get me to read and try to understand Chris Shifflet's article <a href="http://shiflett.org/articles/foiling-cross-site-attacks">Foiling Cross-Site Attacks</a>, conveniently sitting in my inbox waiting to be used. The included code was not quite enough to actually implement a solution--I've never needed to deal with PHP sessions before, if I had this would probably've done the trick--so I also got a <a href="http://www.phpbuilder.com/snippet/detail.php?type=snippet&amp;id=636">very basic script</a> from PHPBuilder.</p>
+<p>Now we'll see how well it works. If you are the cautious type who has cookies turned off, please do me a favor and <a href="http://www.billsaysthis.com/content/contact.phtml?sub=NoCookieTest?">try the form</a> so I get a different test example than myself. Thanks.</p>

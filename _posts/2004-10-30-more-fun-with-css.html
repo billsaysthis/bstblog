@@ -1,0 +1,31 @@
+---
+layout: post
+title: More fun with CSS
+date: 2004-10-30 00:51:00.000000000 -07:00
+type: post
+published: true
+status: publish
+categories:
+- Personal
+tags: []
+meta:
+  blogger_blog: bsstqwerty.blogspot.com
+  blogger_author: BillSaysThis
+  blogger_76d35d3480289f8abae3c7a1f3961b60_permalink: '109909798370012436'
+  _twitterrelated_short_url: http://bit.ly/cNeHdf
+  _twitterrelated_short_urlHash: 60014a3578f121abbddfe5af525fa00d
+  _activeshortener: bitly
+  original_post_id: '4560'
+  _wp_old_slug: '4560'
+author:
+  login: blazar
+  email: blazar@gmail.com
+  display_name: BillSaysThis
+  first_name: ''
+  last_name: ''
+---
+<p>When <a href="http://www.billsaysthis.com/blog/blogarch.phtml?archdate=http://www.billsaysthis.com/blog/2004_10_24_blog_archive.phtml#109882688660541326">Joe helped me</a> debug the <a href="http://www.billsaysthis.com/blog/blogarch.phtml?archdate=http://www.billsaysthis.com/blog/2004_10_24_blog_archive.phtml#109867639016611064">CSS issue</a> over at <a href="http://www.jhtc.org/">JHTC</a>, he also mentioned "BTW -- when one visits an individual post on your site, you have no navigation to your main page -- the user has to literally edit the location to navigate -- poor usability." And he's right. Uggh.</p>
+<p>So I've been working this afternoon on correcting Joe's heads up about the individual posts here and almost had the answer using a simple template fix until I found out that <a href="http://www.blogger.com/">Blogger</a> insists on sticking a trailing slash on whatever value one enters in the Archive URL field of the Archive Settings page. Which breaks my scheme.</p>
+<p>I next thought I would use a CSS trick with &lt;a class="x" href="http://www.blogger.com/app/full blown link"&gt;text&lt;/a&gt; where the class is simply display: none and URL is the one you would get as the item's permalink on my page. That hides the text on the public web page as intended. But doesn't help the RSS feed since, seemingly, Blogger only includes the text from the post body in the RSS item despite this extra template text falling inside the RSS div. Still no luck, sad to say.</p>
+<p>Switched the feed from RSS 2.0 to Atom 0.3. Not sure why I thought this would help but seemed, somehow, that it would. No luck at all.</p>
+<p>I guess this is a limitation of Blogger, at least as it exists now. Me and my zillion-plus readers will have to suffer.<br /></p>

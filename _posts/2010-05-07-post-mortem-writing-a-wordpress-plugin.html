@@ -1,0 +1,40 @@
+---
+layout: post
+title: 'Post-Mortem: Writing a WordPress Plugin'
+date: 2010-05-07 22:48:22.000000000 -07:00
+type: post
+published: true
+status: publish
+categories:
+- Software Development
+tags: []
+meta:
+  aktt_tweeted: '1'
+  _edit_last: '854'
+  _twitterrelated_short_url: http://bit.ly/9jNJKG
+  _twitterrelated_short_urlHash: 3efd506e839847cf376ce3d78623d33c
+  _activeshortener: bitly
+  original_post_id: '4532'
+  _wp_old_slug: '4532'
+author:
+  login: blazar
+  email: blazar@gmail.com
+  display_name: BillSaysThis
+  first_name: ''
+  last_name: ''
+---
+<p>Very happy to say I've just released the first WordPress plugin I coded start to finish by myself (albeit standing on the shoulders of those who came before), <a href="http://wordpress.org/extend/plugins/kachingle-medallion-for-wordpress">Kachingle Medallion for WordPress</a>. As the name suggests, the plugin simplifies using Kachingle on self-hosted WordPress blogs. You can see an example of the result on the right side of this page.</p>
+<p>Of course we hope this plugin will speed adoption of <a href="http://www.kachingle.com">Kachingle</a> and be the first of several platform plugins we can offer.</p>
+<p>Most of the process is reasonably well documented and straightforward. As with many open source projects, WordPress plugin development documentation is a bit of a mess and disjointed; for example, the page explaining how to have options for a plugin covers the older version info first and only after one's read through that will you get to a heading saying info for newer versions starts here. Some important info, like using a single serialized option store versus one row in the options table per option, is not explained at all and the one decent linked external article didn't explain it so I understood.</p>
+<p>One difficulty I had was dealing with a boolean option, which I wanted to control through a checkbox on the options page. None of the docs I found dealt with this at all but fortunately I could look at the code of another plugin. Basically I wrote a custom validator that gets called on update which tests the value submitted by the form and if the value is "on" I return true.</p>
+<p>The submission process is weaker. You go to a form that asks for a title, description and URL and no explanation of those fields or how they'll be used. Nor can your submission be edited afterwords. There's a README validator tool but the Markdown it expects is NOT the Markdown on John Gruber's official Markdown page and the differences are nowhere explained.</p>
+<p>I will try to get some time soon to go in and rectify some of these shortcomings, that's what one does in open source projects after all.</p>
+<p>Some important notes I want to pass along:</p>
+<ul>
+<li>Wrap all your visible strings in either <code>__()</code> or <code>_e()</code> functions so later on localizations are easier.</li>
+<li>Use define() to set up constants for names and default values of your options, and do define default values even if they're empty strings or 0.</li>
+<li>Be a good team player and hook the uninstall filter, where you can unregister your settings to clean up the options table.</li>
+<li>If your plugin inserts content, decide what combination of widget, custom template tag and shortcode will be the best way to surface your content; for this plugin I wrote all three--but I refactored the code so all three call a single function that builds the content to display.</li>
+</ul>
+<p>WordPress has greatly improved the tools available for plugin developers over the last few years. Recently for instance they added functions to much more easily include JavaScript and CSS files on both the public-facing and admin pages. And the community is very active and responsive.</p>
+<p>Love to hear your comments on the Kachingle Medallion plugin!</p>

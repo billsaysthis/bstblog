@@ -1,0 +1,30 @@
+---
+layout: post
+title: Moving to the Blogger GData API
+date: 2006-10-23 00:53:00.000000000 -07:00
+type: post
+published: true
+status: publish
+categories:
+- Personal
+tags: []
+meta:
+  blogger_blog: bsstqwerty.blogspot.com
+  blogger_author: BillSaysThis
+  blogger_76d35d3480289f8abae3c7a1f3961b60_permalink: '116156571088219734'
+  _twitterrelated_short_url: http://bit.ly/btx7be
+  _twitterrelated_short_urlHash: 23d05c0159480ff998e5f75436c1a6bd
+  _activeshortener: bitly
+  original_post_id: '4560'
+  _wp_old_slug: '4560'
+author:
+  login: blazar
+  email: blazar@gmail.com
+  display_name: BillSaysThis
+  first_name: ''
+  last_name: ''
+---
+<p>I've been involved with the Blogger API since it first became publicly available well before Google bought Pyra Labs but it never really got the general availability seal of approval. After Google bought the company it decided that ATOM was preferrable, being more of an industry standard. This was back when ATOM was at the 0.3 stage and even though 1.0 was approved quite some time ago Google didn't move to it very quickly.</p>
+<p>However, now that the Blogger overhaul is in beta they've unveiled the Blogger variant of their GData API, which is closely based on ATOM 1.0. I was going to take a whack at updating the old class library but Eris Ristemena has got a PHP implementation out already, saving me the trouble. Since the Blogger folks have said that the support for the old Blogger API will be going away shortly after Blogger goes out of beta this is very definitely a good thing.</p>
+<p>While the initial release did not include the ability to retrieve a single specific post, which is my primary use, this morning he let me know <a href="http://blog.ngoprek.web.id/2006/10/22/ngeblog-002/">the 0.0.2 version was published</a> and has this function so I rewrote my utility function to use it. You can see it in action on the <a href="http://billsaysthis.com/content/entertain/bookreviews.php">Book Reviews</a> page (just click any book title to see the review open in place) or on any single review page (<a href="http://billsaysthis.com/content/singlepost.php?id=115919841147422727&amp;titl=The%20Algebraist&amp;sy=review">for example</a>), though the code does seem to need a little more testing--not sure if the problem is with the Blogger server side or Eris's code, but there is definitely an inconsistency over different posts.</p>
+<p><span style="font-style:italic;">Sweet!</span></p>

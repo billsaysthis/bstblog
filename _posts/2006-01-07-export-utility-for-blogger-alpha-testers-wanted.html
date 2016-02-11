@@ -1,0 +1,31 @@
+---
+layout: post
+title: 'Export utility for Blogger: Alpha testers wanted'
+date: 2006-01-07 05:58:00.000000000 -08:00
+type: post
+published: true
+status: publish
+categories:
+- Personal
+tags: []
+meta:
+  blogger_blog: bsstqwerty.blogspot.com
+  blogger_author: BillSaysThis
+  blogger_76d35d3480289f8abae3c7a1f3961b60_permalink: '113661424133775362'
+  _twitterrelated_short_url: http://bit.ly/cSJ2RH
+  _twitterrelated_short_urlHash: 457e78a41f8c9bd52347162d808e5228
+  _activeshortener: bitly
+  original_post_id: '4560'
+  _wp_old_slug: '4560'
+author:
+  login: blazar
+  email: blazar@gmail.com
+  display_name: BillSaysThis
+  first_name: ''
+  last_name: ''
+---
+<p>Since I decided I mouthed off just a tad too much last <del>week</del> month on the Blogger Dev mailing list, I assigned myself a little punishment: Write a PHP script which can generate a backup for any blog, comments included, without using the API. Instead of the API you use a specific template, regenerate the entire blog and then the script processes the new archive files.</p>
+<p>My work has ready for a little testing and I need volunteers; I asked for some on the mailing list but got--unbelievably--not a single response, so I'm posting this publicly. If you'd like to be an alpha tester, <a href="http://www.billsaysthis.com/content/contact.phtml?sub=Alpha%20Test%20Blogger%20Export">fill in the contact form</a>.</p>
+<p>To run the script you must have access to a server on which you can run a PHP script; probably the one on which the blog archives are stored, so I guess Blog*Spot blogs are out (but maybe not if you have PHP and the permissions are set a certain way, I haven't looked at Blog*Spot for awhile). My blog doesn't use comments so that part--<span style="font-style:italic;">he typed nervously</span>--is essentially untested and so I'd love a couple of you with decent amount of posts with comments to raise your hands.</p>
+<p>The script is fairly simple, just change a couple of variables at the top of the file to meet your setup, and the output is an XML file. It's not ATOM format but I believe that part would be simple to change if desirable; for now I just want to see if it works for someone besides me.</p>
+<p>Available under the <a href="http://creativecommons.org/licenses/by-sa/2.5/">Creative Commons Attribution-ShareAlike 2.5 Deed</a>.</p>

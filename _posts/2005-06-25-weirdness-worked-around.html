@@ -1,0 +1,34 @@
+---
+layout: post
+title: Weirdness worked around
+date: 2005-06-25 02:53:00.000000000 -07:00
+type: post
+published: true
+status: publish
+categories:
+- Personal
+tags: []
+meta:
+  blogger_blog: bsstqwerty.blogspot.com
+  blogger_author: BillSaysThis
+  blogger_76d35d3480289f8abae3c7a1f3961b60_permalink: '111966819080267147'
+  _twitterrelated_short_url: http://bit.ly/cjgPqG
+  _twitterrelated_short_urlHash: 57a0160060c8a855e3d8d64d6c760eda
+  _activeshortener: bitly
+  original_post_id: '4560'
+  _wp_old_slug: '4560'
+author:
+  login: blazar
+  email: blazar@gmail.com
+  display_name: BillSaysThis
+  first_name: ''
+  last_name: ''
+---
+<p>By the way, <a href="http://www.billsaysthis.com/blog/blogarch.phtml?archdate=2005_06_19_blog_archive.phtml#111958832538671878">the weirdness</a> is still here. I wrote to Blogger Support and posted a note to the user support mailing list but got nothing that helped. The Google people didn't even respond over the course of an entire business day though several well-intentioned people on the list proposed ideas. Still funky and not in the way <a href="http://www.philringnalda.com/main/">Phil</a> and <a href="http://www.scripting.com/">Dave</a> used to joke about.</p>
+<p>Rob's <a href="http://rob.crabapples.net/2005/06/blogger-posting-busted.htm">got the same gunk</a>.</p>
+<p><span style="font-style:italic;">Later:</span> Phil shoots and scores! Here's what he said, in case you're suffering from this too:<br />
+<blockquote>"For some reason (and I'd be interested in hearing a rationalization - maybe they thought they would clear floats from their inserted images, with a sledgehammer?), someone decided that Blogger should automatically insert a clear: both; before and after every post, as a part of the post body where you can't avoid it. Since the clear property says "don't allow any floated elements on my (left|right|both sides)", that makes doubly sure that if your layout consists of a sidebar created with float:right, then your post will start below it.</p>
+<p>Luckily, it looks like you aren't using the clear property anywhere yourself, so adding
+<pre>div {clear: none !important}</pre>
+<p>to your stylesheet ought to overrule their... interesting idea about what they ought to do in your posts."</p></blockquote>
+<p>This should handle the problem until Google dudes get their act together.</p>
